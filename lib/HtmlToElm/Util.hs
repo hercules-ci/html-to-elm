@@ -26,7 +26,7 @@ toCamel =
     . T.unpack
 
 wrap :: T.Text -> T.Text
-wrap = T.pack . show . T.strip
+wrap = T.pack . show
 
 parseStyle :: T.Text -> T.Text
 parseStyle s = "[" <> list s <> "]"

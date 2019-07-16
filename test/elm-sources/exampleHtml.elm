@@ -1,4 +1,4 @@
-import Html exposing (ul, li, a, text)
+import Html exposing (ul, li, a, text, pre, b)
 import Html.Attributes exposing (attribute, class, href)
 
 view = 
@@ -21,6 +21,15 @@ view =
         , li []
             [ a [ class "js-selected-navigation-item HeaderNavlink px-lg-2 py-2 py-lg-0", attribute "data-ga-click" "Header, click, Nav menu - item:explore", attribute "data-selected-links" "/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore", href "/explore" ]
                 [ text "Explore"
+                ]
+            ]
+        , li []
+            [ pre []
+                [ text "\none "
+                , b []
+                    [ text "two"
+                    ]
+                , text "\n  three\n"
                 ]
             ]
         ]

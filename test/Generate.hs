@@ -4,6 +4,7 @@ import           Test.Hspec
 import           Data.Monoid
 import           HtmlToElm.Parser
 import qualified Data.Text                     as T
+import qualified Data.Text.IO                  as T
 
 
 
@@ -19,8 +20,8 @@ main = hspec $ do
         ]
       generated <- mapM
         (\f -> do
-          source <- readFile f
-          return $ (T.unpack $ parse $ T.pack source) <> "\n"
+          source <- T.readFile f
+          return $ (T.unpack $ parse source) <> "\n"
         )
         [ "test/html-sources/example-svg.html"
         , "test/html-sources/example-html.html"
